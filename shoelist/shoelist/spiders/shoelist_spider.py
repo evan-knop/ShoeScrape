@@ -24,6 +24,6 @@ class ShoelistSpider(Spider):
                 'div[5]/div[1]/a/span/text()').extract()[0]
 
             item['Price'] = shoe.xpath(
-                'div[5]/div[4]/div[2]/div[1]/span[1]').extract()[0]
+                'div[5]/div[4]/div[2]/div[1]/span[1]/text()').extract()[0]
 
             yield item

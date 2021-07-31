@@ -62,11 +62,8 @@ ROBOTSTXT_OBEY = True
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
-# Configure item pipelines
-# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'shoelist.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {'shoelist.pipelines.MongoDBPipeline':300}
+SETTING = {'MONGODB_SERVER': "mongodb+srv://shoeAdmin:shoe123@cluster0.m4u4g.mongodb.net/ShoeData?retryWrites=true&w=majority", 'MONGODB_PORT': 27017, 'MONGODB_DB': "ShoeData", 'MONGODB_COLLECTION': "shoes"}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

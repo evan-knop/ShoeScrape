@@ -14,9 +14,6 @@ class ShoelistSpider(Spider):
     def parse(self, response):
         shoes = Selector(response).xpath('//*[@id="rankings-list"]/li')
 
-        print("SHOEEEEES: ")
-        print(shoes)
-
         for shoe in shoes:
             item = ShoelistItem()
 

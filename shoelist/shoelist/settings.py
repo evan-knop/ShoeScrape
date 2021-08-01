@@ -64,7 +64,7 @@ ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {'shoelist.pipelines.MongoDBPipeline':300}
 SETTING = {'MONGODB_SERVER': "mongodb+srv://shoeAdmin:shoe123@cluster0.m4u4g.mongodb.net/ShoeData?retryWrites=true&w=majority", 'MONGODB_PORT': 27017, 'MONGODB_DB': "ShoeData", 'MONGODB_COLLECTION': "shoes"}
-
+DOWNLOAD_DELAY = 5
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

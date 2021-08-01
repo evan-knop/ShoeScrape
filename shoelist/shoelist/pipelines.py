@@ -22,7 +22,7 @@ class MongoDBPipeline(object):
                 valid = False
                 raise DropItem("Missing {0}!".format(data))
         if valid:
-            self.collection.insert(dict(item))
+            self.collection.update({'Price': item['Price']}, dict(item), upsert = True)
             logging.info("Shoe added to MongoDB database!",
                     spider=spider)
         return item

@@ -10,7 +10,7 @@ class ShoelistCrawlerSpider(CrawlSpider):
     start_urls = ['https://runrepeat.com/catalog/running-shoes']
 
     rules = (
-        Rule(LinkExtractor(allow=r'running-shoes\?page=[0-67]'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r'running-shoes\?page=[1-67]'), callback='parse_item', follow=True),
     )
 
     def parse_item(self, response):
@@ -20,10 +20,10 @@ class ShoelistCrawlerSpider(CrawlSpider):
             item = ShoelistItem()
 
             item['ShoeName'] = shoe.xpath(
-                'div[5]/div[1]/a/span/text()').extract()[0]
+                'div[5]/div[1]/a/span/text()').extract_first()
 
             item['Price'] = shoe.xpath(
-                'div[5]/div[4]/div[2]/div[1]/span[1]/text()').extract()[0]
+                'div[5]/div[4]/div[2]/div[1]/span[1]/text()').extract_first()
 
             yield item
 

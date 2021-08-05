@@ -16,13 +16,13 @@ class MongoDBPipeline(object):
         self.collection = db[settings.SETTING.get('MONGODB_COLLECTION')]
 
     def process_item(self, item, spider):
-        valid = True
+        #valid = True
         for data in item:
             if not data:
-                valid = False
+               # valid = False
                 raise DropItem("Missing {0}!".format(data))
-        if valid:
-            self.collection.update({'Price': item['Price']}, dict(item), upsert = True)
-            logging.info("Shoe added to MongoDB database!",
-                    spider=spider)
+       # if valid:
+            self.collection.update({'ShoeName': item['ShoeName']}, dict(item), upsert = True)
+           # logging.info("Shoe added to MongoDB database!",
+           #         spider=spider)
         return item

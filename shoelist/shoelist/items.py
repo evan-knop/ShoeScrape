@@ -18,3 +18,4 @@ class ShoelistItem(scrapy.Item):
     Price = Field()
     #BestUse = Field()
     #Discontinued = Field()
+    Date_Modified = Field()

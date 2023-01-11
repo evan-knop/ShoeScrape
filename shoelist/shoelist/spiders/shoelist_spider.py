@@ -23,4 +23,6 @@ class ShoelistSpider(Spider):
             item['Price'] = shoe.xpath(
                 'div[5]/div[4]/div[2]/div[1]/span[1]/text()').extract()[0]
 
+            item['Date_Modified'] = datetime.datetime.now()
+
             yield item
